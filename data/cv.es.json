@@ -71,6 +71,9 @@
     { "group": "Herramientas", "items": ["Git", "GitHub", "Linux"] },
     { "group": "Videojuegos", "items": ["Unity"] }
   ],
-  "languages": [],
+  "languages": [
+    { "name": "Inglés", "level": "C1 Advanced" },
+    { "name": "Euskera", "level": "C1 (HABE)" }
+  ],
   "certifications": []
 }

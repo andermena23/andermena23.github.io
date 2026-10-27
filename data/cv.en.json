@@ -71,6 +71,9 @@
     { "group": "Tools", "items": ["Git", "GitHub", "Linux"] },
     { "group": "Game development", "items": ["Unity"] }
   ],
-  "languages": [],
+  "languages": [
+    { "name": "English", "level": "C1 Advanced" },
+    { "name": "Basque", "level": "C1 (HABE)" }
+  ],
   "certifications": []
 }
