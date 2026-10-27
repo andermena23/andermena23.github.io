@@ -48,8 +48,14 @@ body {
   break-inside: avoid;
 }
 
-.chip {
+.chip,
+.chip--tech {
+  border-color: var(--border);
   background: transparent;
+}
+
+.chip__icon {
+  display: none;
 }
 
 a {

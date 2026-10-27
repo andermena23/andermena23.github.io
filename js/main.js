@@ -62,9 +62,50 @@
     return cache.get(lang);
   };
 
+  /* Tecnologías: icono y color de cada chip, definidos en data/tech.json */
+
+  const HEX_COLOR = /^#[0-9a-f]{6}$/i;
+  const ICON_NAME = /^[a-z0-9-]+$/i;
+  let techPromise = null;
+
+  const loadTech = () => {
+    techPromise ??= fetch("data/tech.json")
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((json) =>
+        Object.fromEntries(Object.entries(json).map(([name, info]) => [name.toLowerCase(), info])))
+      .catch((error) => {
+        console.error("No se pudo cargar data/tech.json:", error);
+        return {};
+      });
+    return techPromise;
+  };
+
+  let tech = {};
+
+  const chip = (name) => {
+    const item = el("li", "chip");
+    const info = tech[name.toLowerCase()];
+    if (info && ICON_NAME.test(info.icon || "") && HEX_COLOR.test(info.color || "")) {
+      const dark = HEX_COLOR.test(info.colorDark || "") ? info.colorDark : info.color;
+      item.classList.add("chip--tech");
+      item.style.setProperty("--chip-color", `light-dark(${info.color}, ${dark})`);
+      // Absoluta: una url() dentro de una variable CSS se resuelve respecto a la hoja de estilos
+      const iconUrl = new URL(`assets/icons/${info.icon}.svg`, document.baseURI).href;
+      item.style.setProperty("--chip-icon", `url("${iconUrl}")`);
+      const icon = el("span", "chip__icon");
+      icon.setAttribute("aria-hidden", "true");
+      item.append(icon);
+    }
+    item.append(document.createTextNode(name));
+    return item;
+  };
+
   /* Renderizado de secciones */
 
-  const entry = ({ title, subtitle, dates, note, bullets }) => {
+  const entry =({ title, subtitle, dates, note, bullets }) => {
     const item = el("article", "entry");
     const head = el("div", "entry__head");
     head.append(el("h3", "entry__title", title));
@@ -120,7 +161,7 @@
         const tags = list(item.tags);
         if (tags.length) {
           const chips = el("ul", "chips");
-          tags.forEach((tag) => chips.append(el("li", "chip", tag)));
+          tags.forEach((tag) => chips.append(chip(tag)));
           card.append(chips);
         }
         return card;
@@ -142,7 +183,7 @@
           const wrapper = el("div", "skill-group");
           wrapper.append(el("h3", "skill-group__name", group.group));
           const chips = el("ul", "chips");
-          group.items.forEach((name) => chips.append(el("li", "chip", name)));
+          group.items.forEach((name) => chips.append(chip(name)));
           wrapper.append(chips);
           return wrapper;
         }),
@@ -224,8 +265,9 @@
   const setLang = async (lang, { persist = true } = {}) => {
     const id = ++requestId;
     try {
-      const data = await loadData(lang);
+      const [data, techMap] = await Promise.all([loadData(lang), loadTech()]);
       if (id !== requestId) return;
+      tech = techMap;
       currentLang = lang;
       if (persist) store.set("lang", lang);
       apply(data, lang);

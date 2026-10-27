@@ -1,0 +1,17 @@
+{
+  "HTML": { "icon": "html5", "color": "#E34F26" },
+  "CSS": { "icon": "css3", "color": "#1572B6" },
+  "JavaScript": { "icon": "javascript", "color": "#B7791F", "colorDark": "#F7DF1E" },
+  "TypeScript": { "icon": "typescript", "color": "#3178C6" },
+  "Vue 3": { "icon": "vuedotjs", "color": "#4FC08D" },
+  "Java": { "icon": "openjdk", "color": "#ED8B00" },
+  ".NET": { "icon": "dotnet", "color": "#512BD4", "colorDark": "#8E72F0" },
+  "Python": { "icon": "python", "color": "#3776AB", "colorDark": "#5B9BD5" },
+  "SQL": { "icon": "database", "color": "#64748B", "colorDark": "#94A3B8" },
+  "Git": { "icon": "git", "color": "#F05032" },
+  "GitHub": { "icon": "github", "color": "#181717", "colorDark": "#E6E8EB" },
+  "Linux": { "icon": "linux", "color": "#B7791F", "colorDark": "#FCC624" },
+  "Unity": { "icon": "unity", "color": "#181717", "colorDark": "#E6E8EB" },
+  "ExpressJS": { "icon": "express", "color": "#181717", "colorDark": "#E6E8EB" },
+  "Node.js": { "icon": "nodedotjs", "color": "#5FA04E" }
+}

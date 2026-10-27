@@ -267,12 +267,33 @@ a:hover {
 }
 
 .chip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
   padding: var(--space-1) var(--space-3);
   border: var(--border-width) solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
   font-family: var(--font-mono);
   font-size: var(--text-sm);
+}
+
+/* Icono y color de marca: solo en navegadores con light-dark() y color-mix().
+   El texto conserva su color para no perder contraste. */
+@supports (background: color-mix(in srgb, red, blue)) and (color: light-dark(red, blue)) {
+  .chip--tech {
+    border-color: color-mix(in srgb, var(--chip-color) 40%, var(--border));
+    background: color-mix(in srgb, var(--chip-color) 8%, var(--surface));
+  }
+
+  .chip__icon {
+    flex: none;
+    width: 1.15em;
+    height: 1.15em;
+    background: var(--chip-color);
+    -webkit-mask: var(--chip-icon) center / contain no-repeat;
+    mask: var(--chip-icon) center / contain no-repeat;
+  }
 }
 
 .row {
