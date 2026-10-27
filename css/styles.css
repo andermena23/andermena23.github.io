@@ -181,6 +181,42 @@ a:hover {
   margin-top: var(--space-6);
 }
 
+/* Línea temporal vertical: una línea que une los puntos de cada entrada */
+.timeline {
+  --dot-size: 0.5625rem;
+  --timeline-indent: var(--space-6);
+}
+
+.timeline .entry {
+  position: relative;
+  padding-left: var(--timeline-indent);
+}
+
+.timeline .entry::before,
+.timeline .entry::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+/* Punto, centrado con la primera línea del título */
+.timeline .entry::after {
+  top: calc((var(--text-base) * var(--leading-body) - var(--dot-size)) / 2);
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Línea: del punto al punto de la entrada siguiente */
+.timeline .entry:not(:last-child)::before {
+  top: calc(var(--text-base) * var(--leading-body) / 2);
+  bottom: calc(-1 * var(--space-6));
+  left: calc(var(--dot-size) / 2 - var(--border-width) / 2);
+  width: var(--border-width);
+  background: var(--border);
+}
+
 .entry__head {
   display: flex;
   flex-wrap: wrap;
