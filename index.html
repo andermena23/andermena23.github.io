@@ -6,6 +6,35 @@
   <title>Ander Mena · Full Stack Developer</title>
   <meta name="description" content="Estudiante de Ingeniería Informática (Ingeniería del Software) en la UPV/EHU. Full Stack Developer en formación.">
   <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://andermena23.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Ander Mena">
+  <meta property="og:title" content="Ander Mena · Full Stack Developer">
+  <meta property="og:description" content="Estudiante de Ingeniería Informática (Ingeniería del Software) en la UPV/EHU. Full Stack Developer en formación.">
+  <meta property="og:url" content="https://andermena23.github.io/">
+  <meta property="og:image" content="https://github.com/andermena23.png?size=460">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ander Mena",
+    "url": "https://andermena23.github.io/",
+    "image": "https://github.com/andermena23.png?size=460",
+    "sameAs": ["https://github.com/andermena23"],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Universidad del País Vasco (UPV/EHU)"
+    }
+  }
+  </script>
 
   <!-- Aplica el tema guardado antes del primer pintado para evitar parpadeo -->
   <script>
@@ -15,8 +44,12 @@
     } catch (e) {}
   </script>
 
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
 </head>
 <body>
   <a class="skip-link" href="#main" data-bind="ui.skip">Saltar al contenido</a>
@@ -43,38 +76,38 @@
 
   <main id="main">
     <div class="container">
-      <section class="section" id="profile" data-section="summary" hidden>
-        <h2 class="section__title">Perfil</h2>
+      <section class="section" id="profile" data-section="summary" aria-labelledby="profile-title" hidden>
+        <h2 class="section__title" id="profile-title">Perfil</h2>
         <div data-content></div>
       </section>
 
-      <section class="section" id="experience" data-section="experience" hidden>
-        <h2 class="section__title">Experiencia</h2>
+      <section class="section" id="experience" data-section="experience" aria-labelledby="experience-title" hidden>
+        <h2 class="section__title" id="experience-title">Experiencia</h2>
         <div data-content></div>
       </section>
 
-      <section class="section" id="education" data-section="education" hidden>
-        <h2 class="section__title">Formación</h2>
+      <section class="section" id="education" data-section="education" aria-labelledby="education-title" hidden>
+        <h2 class="section__title" id="education-title">Formación</h2>
         <div data-content></div>
       </section>
 
-      <section class="section" id="skills" data-section="skills" hidden>
-        <h2 class="section__title">Habilidades</h2>
+      <section class="section" id="skills" data-section="skills" aria-labelledby="skills-title" hidden>
+        <h2 class="section__title" id="skills-title">Habilidades</h2>
         <div data-content></div>
       </section>
 
-      <section class="section" id="languages" data-section="languages" hidden>
-        <h2 class="section__title">Idiomas</h2>
+      <section class="section" id="languages" data-section="languages" aria-labelledby="languages-title" hidden>
+        <h2 class="section__title" id="languages-title">Idiomas</h2>
         <div data-content></div>
       </section>
 
-      <section class="section" id="certifications" data-section="certifications" hidden>
-        <h2 class="section__title">Certificaciones</h2>
+      <section class="section" id="certifications" data-section="certifications" aria-labelledby="certifications-title" hidden>
+        <h2 class="section__title" id="certifications-title">Certificaciones</h2>
         <div data-content></div>
       </section>
 
-      <section class="section" id="contact" data-section="contact" hidden>
-        <h2 class="section__title">Contacto</h2>
+      <section class="section" id="contact" data-section="contact" aria-labelledby="contact-title" hidden>
+        <h2 class="section__title" id="contact-title">Contacto</h2>
         <div data-content></div>
       </section>
     </div>

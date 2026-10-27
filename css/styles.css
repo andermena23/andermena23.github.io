@@ -266,6 +266,20 @@ a:hover {
   font-size: var(--text-sm);
 }
 
+.not-found {
+  padding-block: var(--space-16);
+}
+
+.not-found__code {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+}
+
+.not-found__text {
+  margin-top: var(--space-4);
+}
+
 .site-footer {
   padding-block: var(--space-8) var(--space-12);
   color: var(--text-muted);
