@@ -246,6 +246,10 @@ a:hover {
   list-style: disc;
 }
 
+.entry > .chips {
+  margin-top: var(--space-3);
+}
+
 .skill-group + .skill-group {
   margin-top: var(--space-6);
 }

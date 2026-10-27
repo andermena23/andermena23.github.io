@@ -8,6 +8,7 @@
     "sections": {
       "summary": "Perfil",
       "experience": "Experiencia",
+      "projects": "Proyectos",
       "education": "Formación",
       "skills": "Habilidades",
       "languages": "Idiomas",
@@ -45,6 +46,14 @@
         "Autenticación y autorización con Keycloak.",
         "Desarrollo backend con Java y Spring Boot."
       ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "ytdown",
+      "description": "Descargador de YouTube multiplataforma con frontend en Vue 3 y backend en ExpressJS. Cola de descargas en tiempo real, procesado de playlists y ajustes configurables desde la interfaz.",
+      "url": "https://github.com/andermena23/ytdown",
+      "tags": ["Vue 3", "ExpressJS", "Node.js"]
     }
   ],
   "education": [

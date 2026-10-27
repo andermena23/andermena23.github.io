@@ -100,6 +100,32 @@
           bullets: item.bullets,
         })),
 
+    projects: (data) =>
+      list(data.projects).map((item) => {
+        const card = el("article", "entry");
+        const head = el("div", "entry__head");
+        const title = el("h3", "entry__title");
+        const url = item.url && safeUrl(item.url, ["https:"]);
+        if (url) {
+          const link = el("a", "", item.name);
+          link.href = url;
+          link.rel = "noopener noreferrer";
+          title.append(link);
+        } else {
+          title.textContent = item.name;
+        }
+        head.append(title);
+        card.append(head);
+        if (item.description) card.append(el("p", "entry__subtitle", item.description));
+        const tags = list(item.tags);
+        if (tags.length) {
+          const chips = el("ul", "chips");
+          tags.forEach((tag) => chips.append(el("li", "chip", tag)));
+          card.append(chips);
+        }
+        return card;
+      }),
+
     education: (data) =>
       list(data.education).map((item) =>
         entry({
