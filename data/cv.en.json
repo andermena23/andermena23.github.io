@@ -69,6 +69,7 @@
     { "group": "Testing", "items": ["Cypress", "JUnit"] },
     { "group": "Tools", "items": ["Git", "GitHub", "Linux", "Claude Code"] },
     { "group": "Game development", "items": ["Unity", "Godot"] },
+    { "group": "Cloud", "items": ["Oracle Cloud", "AWS"] },
     { "group": "Design", "items": ["Photoshop", "Illustrator"] }
   ],
   "languages": [

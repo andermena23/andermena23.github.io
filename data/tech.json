@@ -20,5 +20,7 @@
   "JUnit": { "icon": "junit5", "color": "#1F8A55", "colorDark": "#25A162" },
   "Godot": { "icon": "godotengine", "color": "#478CBF" },
   "Photoshop": { "icon": "adobephotoshop", "color": "#1B7EC9", "colorDark": "#31A8FF" },
-  "Illustrator": { "icon": "adobeillustrator", "color": "#C26A00", "colorDark": "#FF9A00" }
+  "Illustrator": { "icon": "adobeillustrator", "color": "#C26A00", "colorDark": "#FF9A00" },
+  "Oracle Cloud": { "icon": "oracle", "color": "#F80000" },
+  "AWS": { "icon": "amazonwebservices", "color": "#232F3E", "colorDark": "#FF9900" }
 }
