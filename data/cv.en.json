@@ -37,7 +37,7 @@
     },
     {
       "role": "Software Development Internship",
-      "company": "",
+      "company": "Xabet",
       "start": "Jun 2026",
       "end": "Jul 2026",
       "bullets": [
@@ -57,8 +57,9 @@
     }
   ],
   "skills": [
-    { "group": "Frontend", "items": ["TypeScript", "Vue 3"] },
-    { "group": "Backend", "items": ["Java", ".NET"] },
+    { "group": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "Vue 3"] },
+    { "group": "Backend", "items": ["Java", ".NET", "Python", "SQL"] },
+    { "group": "Tools", "items": ["Git", "GitHub", "Linux"] },
     { "group": "Game development", "items": ["Unity"] }
   ],
   "languages": [],
