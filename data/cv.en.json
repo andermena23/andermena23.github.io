@@ -6,14 +6,12 @@
     "switchLang": "Switch to Spanish",
     "toggleTheme": "Toggle light/dark theme",
     "sections": {
-      "summary": "Profile",
       "experience": "Experience",
       "projects": "Projects",
       "education": "Education",
       "skills": "Skills",
       "languages": "Languages",
-      "certifications": "Certifications",
-      "contact": "Contact"
+      "certifications": "Certifications"
     }
   },
   "meta": {

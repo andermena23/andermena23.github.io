@@ -84,6 +84,39 @@ a:hover {
   padding-block: var(--space-12) var(--space-8);
 }
 
+/* Tarjeta de perfil: identidad, resumen, idiomas y contacto en un solo bloque */
+.profile-card {
+  display: grid;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.profile-card__label {
+  margin-bottom: var(--space-2);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+  border-top: var(--border-width) solid var(--border);
+}
+
+.profile-card__actions .btn {
+  margin-top: 0;
+}
+
 .profile {
   display: flex;
   flex-direction: column;
@@ -173,10 +206,6 @@ a:hover {
 }
 
 /* Contenido */
-.summary {
-  color: var(--text);
-}
-
 .entry + .entry {
   margin-top: var(--space-6);
 }
@@ -296,6 +325,24 @@ a:hover {
   }
 }
 
+.chip__level {
+  color: var(--text-muted);
+}
+
+/* Chip como enlace (contacto): el icono toma el color del texto atenuado */
+.chip--link {
+  --chip-color: var(--text-muted);
+  color: var(--text);
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.chip--link:hover {
+  --chip-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -309,22 +356,6 @@ a:hover {
 
 .row__detail {
   color: var(--text-muted);
-}
-
-.contact-list__item {
-  display: flex;
-  gap: var(--space-4);
-}
-
-.contact-list__item + .contact-list__item {
-  margin-top: var(--space-2);
-}
-
-.contact-list__label {
-  min-width: 6rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
 }
 
 .not-found {

@@ -6,14 +6,12 @@
     "switchLang": "Cambiar a inglés",
     "toggleTheme": "Cambiar tema claro/oscuro",
     "sections": {
-      "summary": "Perfil",
       "experience": "Experiencia",
       "projects": "Proyectos",
       "education": "Formación",
       "skills": "Habilidades",
       "languages": "Idiomas",
-      "certifications": "Certificaciones",
-      "contact": "Contacto"
+      "certifications": "Certificaciones"
     }
   },
   "meta": {

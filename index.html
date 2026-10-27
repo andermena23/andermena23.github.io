@@ -62,12 +62,25 @@
         <button type="button" class="icon-btn" id="theme-toggle"><span aria-hidden="true">◐</span></button>
       </div>
 
-      <div class="profile">
-        <img class="profile__photo" src="https://github.com/andermena23.png?size=224" alt="" width="112" height="112">
-        <div>
-          <h1 class="profile__name" data-bind="meta.name">Ander Mena</h1>
-          <p class="profile__title" data-bind="meta.title">Full Stack Developer en formación</p>
-          <p class="profile__location" data-bind="meta.location"></p>
+      <div class="profile-card">
+        <div class="profile">
+          <img class="profile__photo" src="https://github.com/andermena23.png?size=224" alt="" width="112" height="112">
+          <div>
+            <h1 class="profile__name" data-bind="meta.name">Ander Mena</h1>
+            <p class="profile__title" data-bind="meta.title">Full Stack Developer en formación</p>
+            <p class="profile__location" data-bind="meta.location"></p>
+          </div>
+        </div>
+
+        <p class="profile-card__summary" data-bind="meta.summary">Estudiante de Ingeniería Informática en la UPV/EHU, en la rama de Ingeniería del Software. Me interesa construir productos web de principio a fin, del frontend al backend.</p>
+
+        <div class="profile-card__languages" data-languages hidden>
+          <p class="profile-card__label" data-languages-label></p>
+          <ul class="chips" data-languages-list></ul>
+        </div>
+
+        <div class="profile-card__actions" hidden>
+          <ul class="chips" data-links></ul>
           <a class="btn" id="cv-download" download hidden></a>
         </div>
       </div>
@@ -76,11 +89,6 @@
 
   <main id="main">
     <div class="container">
-      <section class="section" id="profile" data-section="summary" aria-labelledby="profile-title" hidden>
-        <h2 class="section__title" id="profile-title">Perfil</h2>
-        <div data-content></div>
-      </section>
-
       <section class="section" id="experience" data-section="experience" aria-labelledby="experience-title" hidden>
         <h2 class="section__title" id="experience-title">Experiencia</h2>
         <div class="timeline" data-content></div>
@@ -101,18 +109,8 @@
         <div data-content></div>
       </section>
 
-      <section class="section" id="languages" data-section="languages" aria-labelledby="languages-title" hidden>
-        <h2 class="section__title" id="languages-title">Idiomas</h2>
-        <div data-content></div>
-      </section>
-
       <section class="section" id="certifications" data-section="certifications" aria-labelledby="certifications-title" hidden>
         <h2 class="section__title" id="certifications-title">Certificaciones</h2>
-        <div data-content></div>
-      </section>
-
-      <section class="section" id="contact" data-section="contact" aria-labelledby="contact-title" hidden>
-        <h2 class="section__title" id="contact-title">Contacto</h2>
         <div data-content></div>
       </section>
     </div>

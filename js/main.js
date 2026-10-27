@@ -85,6 +85,15 @@
 
   let tech = {};
 
+  const iconNode = (name) => {
+    const node = el("span", "chip__icon");
+    node.setAttribute("aria-hidden", "true");
+    // Absoluta: una url() dentro de una variable CSS se resuelve respecto a la hoja de estilos
+    const iconUrl = new URL(`assets/icons/${name}.svg`, document.baseURI).href;
+    node.style.setProperty("--chip-icon", `url("${iconUrl}")`);
+    return node;
+  };
+
   const chip = (name) => {
     const item = el("li", "chip");
     const info = tech[name.toLowerCase()];
@@ -92,12 +101,7 @@
       const dark = HEX_COLOR.test(info.colorDark || "") ? info.colorDark : info.color;
       item.classList.add("chip--tech");
       item.style.setProperty("--chip-color", `light-dark(${info.color}, ${dark})`);
-      // Absoluta: una url() dentro de una variable CSS se resuelve respecto a la hoja de estilos
-      const iconUrl = new URL(`assets/icons/${info.icon}.svg`, document.baseURI).href;
-      item.style.setProperty("--chip-icon", `url("${iconUrl}")`);
-      const icon = el("span", "chip__icon");
-      icon.setAttribute("aria-hidden", "true");
-      item.append(icon);
+      item.append(iconNode(info.icon));
     }
     item.append(document.createTextNode(name));
     return item;
@@ -105,7 +109,7 @@
 
   /* Renderizado de secciones */
 
-  const entry =({ title, subtitle, dates, note, bullets }) => {
+  const entry = ({ title, subtitle, dates, note, bullets }) => {
     const item = el("article", "entry");
     const head = el("div", "entry__head");
     head.append(el("h3", "entry__title", title));
@@ -130,8 +134,6 @@
   };
 
   const renderers = {
-    summary: (data) => (data.meta.summary ? [el("p", "summary", data.meta.summary)] : []),
-
     experience: (data) =>
       list(data.experience).map((item) =>
         entry({
@@ -188,35 +190,48 @@
           return wrapper;
         }),
 
-    languages: (data) => list(data.languages).map((item) => row(item.name, item.level)),
-
     certifications: (data) =>
       list(data.certifications).map((item) =>
         row(item.name, [item.issuer, item.year].filter(Boolean).join(" · "))),
+  };
 
-    contact: (data) => {
-      const { email, github, linkedin } = data.contact || {};
-      const links = [];
-      const mail = email && /^[^\s@]+@[^\s@]+$/.test(email) ? `mailto:${email}` : null;
-      if (mail) links.push(["Email", mail, email]);
-      const gh = github && safeUrl(github, ["https:"]);
-      if (gh) links.push(["GitHub", gh, gh.replace(/^https:\/\//, "")]);
-      const li = linkedin && safeUrl(linkedin, ["https:"]);
-      if (li) links.push(["LinkedIn", li, li.replace(/^https:\/\/(www\.)?/, "")]);
-      if (!links.length) return [];
+  /* Tarjeta de perfil: idiomas y enlaces de contacto */
 
-      const ul = el("ul", "contact-list");
-      links.forEach(([label, href, text]) => {
-        const item = el("li", "contact-list__item");
-        item.append(el("span", "contact-list__label", label));
-        const link = el("a", "", text);
-        link.href = href;
-        if (href.startsWith("https:")) link.rel = "noopener noreferrer";
-        item.append(link);
-        ul.append(item);
-      });
-      return [ul];
-    },
+  const contactLinks = ({ email, github, linkedin } = {}) => {
+    const links = [];
+    if (email && /^[^\s@]+@[^\s@]+$/.test(email)) links.push(["Email", `mailto:${email}`, "mail"]);
+    const gh = github && safeUrl(github, ["https:"]);
+    if (gh) links.push(["GitHub", gh, "github"]);
+    const li = linkedin && safeUrl(linkedin, ["https:"]);
+    if (li) links.push(["LinkedIn", li, "linkedin"]);
+
+    return links.map(([label, href, icon]) => {
+      const item = el("li");
+      const link = el("a", "chip chip--link");
+      link.href = href;
+      if (href.startsWith("https:")) link.rel = "noopener noreferrer";
+      link.append(iconNode(icon), document.createTextNode(label));
+      item.append(link);
+      return item;
+    });
+  };
+
+  const languageChips = (languages) =>
+    languages.map((item) => {
+      const node = el("li", "chip", item.name);
+      if (item.level) node.append(" ", el("span", "chip__level", item.level));
+      return node;
+    });
+
+  const renderCard = (data, ui) => {
+    const languages = list(data.languages);
+    $("[data-languages]").hidden = languages.length === 0;
+    $("[data-languages-label]").textContent = ui.sections.languages;
+    $("[data-languages-list]").replaceChildren(...languageChips(languages));
+
+    const links = contactLinks(data.contact);
+    $("[data-links]").replaceChildren(...links);
+    $("[data-links]").hidden = links.length === 0;
   };
 
   const apply = (data, lang) => {
@@ -248,6 +263,9 @@
       cv.href = cvUrl;
       cv.textContent = ui.download;
     }
+
+    renderCard(data, ui);
+    $(".profile-card__actions").hidden = $("[data-links]").hidden && cv.hidden;
 
     const other = SUPPORTED.find((code) => code !== lang);
     const langButton = $("#lang-toggle");
