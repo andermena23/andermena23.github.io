@@ -27,7 +27,26 @@
     "github": "https://github.com/andermena23",
     "linkedin": ""
   },
-  "experience": [],
+  "experience": [
+    {
+      "role": "Trabajo de Fin de Grado (TFG)",
+      "company": "Xabet",
+      "start": "",
+      "end": "Actualidad",
+      "bullets": []
+    },
+    {
+      "role": "Prácticas de desarrollo",
+      "company": "",
+      "start": "Jun 2026",
+      "end": "Jul 2026",
+      "bullets": [
+        "Migración de Vue 2 a Vue 3.",
+        "Autenticación y autorización con Keycloak.",
+        "Desarrollo backend con Java y Spring Boot."
+      ]
+    }
+  ],
   "education": [
     {
       "degree": "Grado en Ingeniería Informática · Ingeniería del Software",
@@ -38,9 +57,9 @@
     }
   ],
   "skills": [
-    { "group": "Frontend", "items": ["HTML", "CSS", "JavaScript"] },
-    { "group": "Backend", "items": ["Java", "Python", "SQL"] },
-    { "group": "Herramientas", "items": ["Git", "GitHub", "Linux"] }
+    { "group": "Frontend", "items": ["TypeScript", "Vue 3"] },
+    { "group": "Backend", "items": ["Java", ".NET"] },
+    { "group": "Videojuegos", "items": ["Unity"] }
   ],
   "languages": [],
   "certifications": []
