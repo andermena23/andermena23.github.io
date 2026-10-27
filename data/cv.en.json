@@ -68,7 +68,8 @@
     { "group": "Backend", "items": ["Java", "C#", ".NET", "Python", "Node.js", "ExpressJS", "SQL"] },
     { "group": "Testing", "items": ["Cypress", "JUnit"] },
     { "group": "Tools", "items": ["Git", "GitHub", "Linux", "Claude Code"] },
-    { "group": "Game development", "items": ["Unity", "Godot"] }
+    { "group": "Game development", "items": ["Unity", "Godot"] },
+    { "group": "Design", "items": ["Photoshop", "Illustrator"] }
   ],
   "languages": [
     { "name": "English", "level": "C1 Advanced" },

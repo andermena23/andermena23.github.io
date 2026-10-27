@@ -18,5 +18,7 @@
   "Cypress": { "icon": "cypress", "color": "#1B8A66", "colorDark": "#69D3A7" },
   "Claude Code": { "icon": "claude", "color": "#C15F3C", "colorDark": "#D97757" },
   "JUnit": { "icon": "junit5", "color": "#1F8A55", "colorDark": "#25A162" },
-  "Godot": { "icon": "godotengine", "color": "#478CBF" }
+  "Godot": { "icon": "godotengine", "color": "#478CBF" },
+  "Photoshop": { "icon": "adobephotoshop", "color": "#1B7EC9", "colorDark": "#31A8FF" },
+  "Illustrator": { "icon": "adobeillustrator", "color": "#C26A00", "colorDark": "#FF9A00" }
 }
