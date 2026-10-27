@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "name": "Ander Mena",
+    "title": "Full Stack Developer in training",
+    "location": "Basque Country",
+    "summary": "Computer Engineering student at UPV/EHU, specializing in Software Engineering. I enjoy building web products end to end, from frontend to backend."
+  },
+  "contact": {
+    "email": "",
+    "github": "https://github.com/andermena23",
+    "linkedin": ""
+  },
+  "experience": [],
+  "education": [
+    {
+      "degree": "BSc in Computer Engineering · Software Engineering",
+      "school": "University of the Basque Country (UPV/EHU)",
+      "start": "",
+      "end": "Present",
+      "note": ""
+    }
+  ],
+  "skills": [
+    { "group": "Frontend", "items": ["HTML", "CSS", "JavaScript"] },
+    { "group": "Backend", "items": ["Java", "Python", "SQL"] },
+    { "group": "Tools", "items": ["Git", "GitHub", "Linux"] }
+  ],
+  "languages": [],
+  "certifications": []
+}

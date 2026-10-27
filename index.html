@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ander Mena · Full Stack Developer</title>
+  <meta name="description" content="Estudiante de Ingeniería Informática (Ingeniería del Software) en la UPV/EHU. Full Stack Developer en formación.">
+  <meta name="color-scheme" content="dark light">
+
+  <!-- Aplica el tema guardado antes del primer pintado para evitar parpadeo -->
+  <script>
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="profile">
+        <img class="profile__photo" src="https://github.com/andermena23.png?size=224" alt="Foto de perfil" width="112" height="112">
+        <div>
+          <h1 class="profile__name" data-bind="meta.name">Ander Mena</h1>
+          <p class="profile__title" data-bind="meta.title">Full Stack Developer en formación</p>
+          <p class="profile__location" data-bind="meta.location"></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section class="section" id="profile" data-section="summary" hidden>
+        <h2 class="section__title">Perfil</h2>
+        <div data-content></div>
+      </section>
+
+      <section class="section" id="experience" data-section="experience" hidden>
+        <h2 class="section__title">Experiencia</h2>
+        <div data-content></div>
+      </section>
+
+      <section class="section" id="education" data-section="education" hidden>
+        <h2 class="section__title">Formación</h2>
+        <div data-content></div>
+      </section>
+
+      <section class="section" id="skills" data-section="skills" hidden>
+        <h2 class="section__title">Habilidades</h2>
+        <div data-content></div>
+      </section>
+
+      <section class="section" id="languages" data-section="languages" hidden>
+        <h2 class="section__title">Idiomas</h2>
+        <div data-content></div>
+      </section>
+
+      <section class="section" id="certifications" data-section="certifications" hidden>
+        <h2 class="section__title">Certificaciones</h2>
+        <div data-content></div>
+      </section>
+
+      <section class="section" id="contact" data-section="contact" hidden>
+        <h2 class="section__title">Contacto</h2>
+        <div data-content></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span data-year>2026</span> Ander Mena</p>
+    </div>
+  </footer>
+</body>
+</html>

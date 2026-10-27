@@ -1,0 +1,82 @@
+/* Design tokens. Único sitio donde se definen colores, espaciado y tipografía. */
+
+:root {
+  /* Color · oscuro por defecto */
+  --bg: #0b0d10;
+  --surface: #12151a;
+  --border: #222831;
+  --text: #e6e8eb;
+  --text-muted: #8b93a0;
+  --accent: #e879f9;
+  --accent-contrast: #0b0d10;
+
+  /* Tipografía */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+
+  --leading-body: 1.6;
+  --leading-heading: 1.2;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  /* Espaciado (base 4px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Forma */
+  --radius: 8px;
+  --border-width: 1px;
+
+  /* Layout */
+  --content-width: 720px;
+  --gutter: var(--space-4);
+
+  /* Movimiento */
+  --transition: 150ms ease;
+}
+
+/* Claro: automático si el sistema lo pide y el usuario no ha forzado oscuro */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --border: #e4e4e7;
+    --text: #18181b;
+    --text-muted: #52525b;
+    --accent: #a21caf;
+    --accent-contrast: #ffffff;
+  }
+}
+
+/* Claro: forzado por el usuario */
+:root[data-theme="light"] {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --border: #e4e4e7;
+  --text: #18181b;
+  --text-muted: #52525b;
+  --accent: #a21caf;
+  --accent-contrast: #ffffff;
+}
+
+@media (min-width: 640px) {
+  :root { --gutter: var(--space-6); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --transition: 0ms; }
+}
