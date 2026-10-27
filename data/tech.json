@@ -16,5 +16,6 @@
   "Node.js": { "icon": "nodedotjs", "color": "#5FA04E" },
   "C#": { "icon": "csharp", "color": "#68217A", "colorDark": "#B57DD0" },
   "Cypress": { "icon": "cypress", "color": "#1B8A66", "colorDark": "#69D3A7" },
-  "Claude Code": { "icon": "claude", "color": "#C15F3C", "colorDark": "#D97757" }
+  "Claude Code": { "icon": "claude", "color": "#C15F3C", "colorDark": "#D97757" },
+  "JUnit": { "icon": "junit5", "color": "#1F8A55", "colorDark": "#25A162" }
 }

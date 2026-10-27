@@ -66,7 +66,7 @@
   "skills": [
     { "group": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "Vue 3"] },
     { "group": "Backend", "items": ["Java", "C#", ".NET", "Python", "Node.js", "ExpressJS", "SQL"] },
-    { "group": "Testing", "items": ["Cypress"] },
+    { "group": "Testing", "items": ["Cypress", "JUnit"] },
     { "group": "Herramientas", "items": ["Git", "GitHub", "Linux", "Claude Code"] },
     { "group": "Videojuegos", "items": ["Unity"] }
   ],
