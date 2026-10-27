@@ -24,7 +24,8 @@ Los datos viven en `data/cv.es.json` y `data/cv.en.json`, con el mismo esquema:
 
 ```json
 {
-  "meta": { "name": "", "title": "", "location": "", "summary": "" },
+  "ui": { "skip": "", "photoAlt": "", "download": "", "switchLang": "", "toggleTheme": "", "sections": {} },
+  "meta": { "name": "", "title": "", "location": "", "summary": "", "cv": "" },
   "contact": { "email": "", "github": "", "linkedin": "" },
   "experience": [{ "role": "", "company": "", "start": "", "end": "", "bullets": [] }],
   "education": [{ "degree": "", "school": "", "start": "", "end": "", "note": "" }],
@@ -33,6 +34,8 @@ Los datos viven en `data/cv.es.json` y `data/cv.en.json`, con el mismo esquema:
   "certifications": [{ "name": "", "issuer": "", "year": "" }]
 }
 ```
+
+`ui` contiene los textos de interfaz de cada idioma y `meta.cv` la ruta del PDF (vacío = el botón de descarga no se muestra).
 
 Las secciones sin datos (por ejemplo `experience` o `certifications` vacíos) no se renderizan. Así se puede publicar antes de tener el CV completo.
 

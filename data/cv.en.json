@@ -1,9 +1,26 @@
 {
+  "ui": {
+    "skip": "Skip to content",
+    "photoAlt": "Ander Mena's profile photo",
+    "download": "Download CV",
+    "switchLang": "Switch to Spanish",
+    "toggleTheme": "Toggle light/dark theme",
+    "sections": {
+      "summary": "Profile",
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "languages": "Languages",
+      "certifications": "Certifications",
+      "contact": "Contact"
+    }
+  },
   "meta": {
     "name": "Ander Mena",
     "title": "Full Stack Developer in training",
     "location": "Basque Country",
-    "summary": "Computer Engineering student at UPV/EHU, specializing in Software Engineering. I enjoy building web products end to end, from frontend to backend."
+    "summary": "Computer Engineering student at UPV/EHU, specializing in Software Engineering. I enjoy building web products end to end, from frontend to backend.",
+    "cv": ""
   },
   "contact": {
     "email": "",

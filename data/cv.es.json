@@ -1,9 +1,26 @@
 {
+  "ui": {
+    "skip": "Saltar al contenido",
+    "photoAlt": "Foto de perfil de Ander Mena",
+    "download": "Descargar CV",
+    "switchLang": "Cambiar a inglés",
+    "toggleTheme": "Cambiar tema claro/oscuro",
+    "sections": {
+      "summary": "Perfil",
+      "experience": "Experiencia",
+      "education": "Formación",
+      "skills": "Habilidades",
+      "languages": "Idiomas",
+      "certifications": "Certificaciones",
+      "contact": "Contacto"
+    }
+  },
   "meta": {
     "name": "Ander Mena",
     "title": "Full Stack Developer en formación",
     "location": "País Vasco",
-    "summary": "Estudiante de Ingeniería Informática en la UPV/EHU, en la rama de Ingeniería del Software. Me interesa construir productos web de principio a fin, del frontend al backend."
+    "summary": "Estudiante de Ingeniería Informática en la UPV/EHU, en la rama de Ingeniería del Software. Me interesa construir productos web de principio a fin, del frontend al backend.",
+    "cv": ""
   },
   "contact": {
     "email": "",

@@ -19,16 +19,23 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <a class="skip-link" href="#main" data-bind="ui.skip">Saltar al contenido</a>
 
   <header class="site-header">
     <div class="container">
+      <!-- Los controles se muestran cuando el JS ha cargado -->
+      <div class="toolbar" hidden>
+        <button type="button" class="icon-btn" id="lang-toggle"></button>
+        <button type="button" class="icon-btn" id="theme-toggle"><span aria-hidden="true">◐</span></button>
+      </div>
+
       <div class="profile">
-        <img class="profile__photo" src="https://github.com/andermena23.png?size=224" alt="Foto de perfil" width="112" height="112">
+        <img class="profile__photo" src="https://github.com/andermena23.png?size=224" alt="" width="112" height="112">
         <div>
           <h1 class="profile__name" data-bind="meta.name">Ander Mena</h1>
           <p class="profile__title" data-bind="meta.title">Full Stack Developer en formación</p>
           <p class="profile__location" data-bind="meta.location"></p>
+          <a class="btn" id="cv-download" download hidden></a>
         </div>
       </div>
     </div>
@@ -78,5 +85,7 @@
       <p>© <span data-year>2026</span> Ander Mena</p>
     </div>
   </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
